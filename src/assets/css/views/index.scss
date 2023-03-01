@@ -1,0 +1,143 @@
+.home-box {
+  position: relative;
+
+  .message {
+    position: absolute;
+    top: calc(5vh + 70px);
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: 0 auto;
+    z-index: $--z-index-5;
+
+    p {
+      color: white;
+      font-weight: bold;
+      font-size: 10vh;
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+      user-select: none;
+      margin: 0;
+    }
+
+    span {
+      display: inline-block;
+      color: white;
+      max-width: 80vw;
+      height: 5vh;
+      line-height: 5vh;
+      font-size: 2.5vh;
+      overflow: hidden;
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+
+      &::selection {
+        background-color: rgba(255, 255, 255, .1);
+      }
+    }
+  }
+
+  .next-btn-box {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 95vh;
+
+    .next-page-btn {
+      display: inline-block;
+      font-size: 3vh;
+      cursor: pointer;
+      animation-name: scaleBtn;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes scaleBtn {
+      0% {
+        transform: scale(1) translateY(10%);
+        color: $--color-primary-light-5;
+      }
+
+      50% {
+        transform: scale(1.2);
+        opacity: 0;
+        color: $--color-primary-light-9;
+      }
+
+      100% {
+        transform: scale(1) translateY(10%);
+        color: $--color-primary-light-5;
+      }
+    }
+  }
+
+  .first-box {
+    height: 100vh;
+    background-image: url("https://ytxy-images.oss-cn-shanghai.aliyuncs.com/wallpaper/1671418336253.jpg");
+    background-size: cover;
+    background-position: 50% 50%;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    @media screen and (max-width: 720px) {
+      .title {
+        font-size: 30vw;
+        font-weight: 900;
+        line-height: 100vh;
+        user-select: none;
+      }
+    }
+
+    @media screen and (min-width: 720px) {
+      .title {
+        font-size: 30vh;
+        font-weight: 900;
+        line-height: 100vh;
+        user-select: none;
+      }
+    }
+
+    &:before {
+      content: "";
+      background-image: inherit;
+      background-size: cover;
+      background-position: 50% 50%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -99;
+    }
+
+
+  }
+
+  .container-box {
+    padding: 20px 0;
+    width: 100%;
+
+    .container {
+      width: calc(100% - 40px);
+      max-width: 1150px;
+      margin: auto;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+
+      @media screen and (min-width: 900px) {
+        &>.blog-card {
+          width: 30%;
+        }
+      }
+
+      @media screen and (max-width: 900px) {
+        &>.blog-card {
+          width: 90%;
+        }
+      }
+    }
+  }
+}

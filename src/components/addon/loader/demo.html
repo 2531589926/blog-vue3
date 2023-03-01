@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>myLoader</title>
+
+    <link rel="stylesheet" href="loader.min.css" />
+
+    <style>
+      body {
+        background-color: #ebf2ff;
+      }
+
+      #myLoader {
+        width: 1170px;
+        margin: 0 calc((100% - 1170px) / 2);
+        height: 100%;
+        overflow: auto;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      #myLoader > .vbox {
+        background-color: #0c1933;
+        width: 24%;
+        margin: 10px 0;
+        height: 150px;
+        text-align: center;
+        overflow: hidden;
+        border-radius: 15px;
+        cursor: pointer;
+      }
+
+      #myLoader > .vbox > p {
+        display: block;
+        height: 20px;
+        margin: 0;
+        color: #c4d9ff;
+      }
+
+      #myLoader > .vbox > div {
+        width: 100%;
+        height: 130px;
+        line-height: 130px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="myLoader"></div>
+    <script>
+      let dataList = [
+        {
+          name: "ball-beat",
+          html: "<div><div></div>" + "  <div></div>" + "  <div></div></div>",
+        },
+        {
+          name: "ball-pulse",
+          html: "<div><div></div>" + "  <div></div>" + "  <div></div></div>",
+        },
+        {
+          name: "ball-pulse-sync",
+          html: "<div><div></div>" + "  <div></div>" + "  <div></div></div>",
+        },
+        {
+          name: "ball-rotate",
+          html: "<div><div></div></div>",
+        },
+        {
+          name: "ball-pulse-rise",
+          html: "<div><div></div>" + "  <div></div>" + "  <div></div></div>",
+        },
+        {
+          name: "ball-grid-beat",
+          html:
+            "<div><div></div>" +
+            "  <div></div>" +
+            "  <div></div>" +
+            "  <div></div>" +
+            "  <div></div>" +
+            "  <div></div>" +
+            "  <div></div>" +
+            "  <div></div>" +
+            "  <div></div></div>",
+        },
+        {
+          name: "ball-grid-pulse",
+          html:
+            "<div><div></div>" +
+            "  <div></div>" +
+            "  <div></div>" +
+            "  <div></div>" +
+            "  <div></div>" +
+            "  <div></div>" +
+            "  <div></div>" +
+            "  <div></div>" +
+            "  <div></div></div>",
+        },
+        {
+          name: "ball-scale-random",
+          html: "<div><div></div>" + "  <div></div>" + "  <div></div>" + "  <div></div></div>",
+        },
+        {
+          name: "line-scale",
+          html: "<div><div></div>" + "  <div></div>" + "  <div></div>" + "  <div></div>" + "  <div></div></div>",
+        },
+        {
+          name: "line-scale-party",
+          html: "<div><div></div>" + "  <div></div>" + "  <div></div>" + "  <div></div></div>",
+        },
+        {
+          name: "line-scale-pulse-out",
+          html: "<div><div></div>" + "  <div></div>" + "  <div></div>" + "  <div></div>" + "  <div></div></div>",
+        },
+        {
+          name: "line-scale-pulse-out-rapid",
+          html: "<div><div></div>" + "  <div></div>" + "  <div></div>" + "  <div></div>" + "  <div></div></div>",
+        },
+        {
+          name: "ball-clip-rotate",
+          html: "<div></div>",
+        },
+        {
+          name: "ball-clip-rotate-multiple",
+          html: "<div></div>" + "  <div></div>",
+        },
+        {
+          name: "ball-clip-rotate-pulse",
+          html: "<div></div>" + "  <div></div>",
+        },
+        {
+          name: "ball-rotate-circle-spin",
+          html: "<div></div>",
+        },
+        {
+          name: "ball-scale",
+          html: "<div></div>",
+        },
+        {
+          name: "ball-scale-multiple",
+          html: "<div></div>" + "  <div></div>" + "  <div></div>",
+        },
+        {
+          name: "ball-scale-ripple",
+          html: "<div></div>",
+        },
+        {
+          name: "ball-scale-ripple-multiple",
+          html: "<div></div>" + "  <div></div>" + "  <div></div>",
+        },
+        {
+          name: "ball-zig-zag",
+          html: "<div></div>" + "  <div></div>",
+        },
+        {
+          name: "cube-transition",
+          html: "<div></div>" + "  <div></div>",
+        },
+        {
+          name: "ball-triangle-path",
+          html: "<div></div>" + "  <div></div>" + "  <div></div>",
+        },
+        {
+          name: "ball-swing",
+          html: "<div></div>" + "  <div></div>",
+        },
+        {
+          name: "triangle-skew-spin",
+          html: "<div></div>",
+        },
+        {
+          name: "square-spin",
+          html: "<div></div>",
+        },
+        {
+          name: "cube-grid",
+          html:
+            "<div><div></div>" +
+            "  <div></div>" +
+            "  <div></div>" +
+            "  <div></div>" +
+            "  <div></div>" +
+            "  <div></div>" +
+            "  <div></div>" +
+            "  <div></div>" +
+            "  <div></div></div>",
+        },
+        {
+          name: "cube-fold",
+          html: "<div></div>" + "  <div></div>" + "  <div></div>" + "  <div></div>",
+        },
+        {
+          name: "ball-spin-fade-loader",
+          html:
+            "<div></div>" +
+            "  <div></div>" +
+            "  <div></div>" +
+            "  <div></div>" +
+            "  <div></div>" +
+            "  <div></div>" +
+            "  <div></div>" +
+            "  <div></div>",
+        },
+        {
+          name: "line-spin-fade-loader",
+          html:
+            "<div></div>" +
+            "  <div></div>" +
+            "  <div></div>" +
+            "  <div></div>" +
+            "  <div></div>" +
+            "  <div></div>" +
+            "  <div></div>" +
+            "  <div></div>",
+        },
+        {
+          name: "chase-spin-fade-loader",
+          html: "<div></div>" + "  <div></div>" + "  <div></div>" + "  <div></div>" + "  <div></div>" + "  <div></div>",
+        },
+        {
+          name: "pacman",
+          html: "<div><div></div>" + "  <div></div>" + "  <div></div>" + "  <div></div>" + "  <div></div></div>",
+        },
+      ];
+
+      window.onload = function () {
+        let list = dataList;
+        let parent = document.getElementById("myLoader");
+
+        for (let i = 0; i < list.length; i++) {
+          let dom =
+            '<div class="vbox">' +
+            "        <p>" +
+            list[i].name +
+            "</p>" +
+            "        <div>" +
+            "           <div class='y-loader'>" +
+            "               <div class='loader'>" +
+            "                   <div class='" +
+            list[i].name +
+            "'>" +
+            list[i].html +
+            "                   </div>" +
+            "                   <span>加载中</span>" +
+            "               </div>" +
+            "           </div>" +
+            "       </div>" +
+            "    </div>";
+
+          parent.innerHTML += dom;
+        }
+      };
+    </script>
+  </body>
+</html>

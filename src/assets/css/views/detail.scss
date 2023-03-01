@@ -1,0 +1,47 @@
+.detail {
+  position: relative;
+  width: 100%;
+
+  &>.header {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: $--color-primary-dark-8;
+    border-radius: 0 0 30% 30%;
+
+    &>.container {
+      z-index: $--z-index-5;
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 70px 0 70px 0;
+      color: white;
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+
+      &>.title {
+        display: block;
+        max-width: 80%;
+        text-align: center;
+        font-size: 5vh;
+        margin: 10px auto;
+      }
+
+      &>.author_date {
+        display: block;
+        text-align: center;
+        font-size: 2vh;
+        margin: 2vh 0;
+
+        &>i {
+          margin: 0 10px;
+        }
+      }
+    }
+  }
+
+  &>.container {
+    width: 1110px;
+    max-width: 80%;
+    margin: -50px auto 0 auto;
+  }
+}

@@ -1,0 +1,153 @@
+.my-blogs {
+    &>.article {
+        width: 100%;
+        position: relative;
+
+        &>.lt-box {
+            &>.main {
+                width: 100%;
+                background-color: rgba(255, 255, 255, 0.9);
+                padding: 20px;
+                border-radius: $--border-radius-mini;
+                box-shadow: $--box-shadow-5;
+                color: $--color-primary-dark-9;
+                word-wrap: break-word;
+                word-break: break-all;
+                overflow: hidden;
+                display: inline-block;
+            }
+        }
+
+        &>.rt-box {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 245px;
+            color: $--color-primary-dark-9;
+            border-radius: $--border-radius-base;
+
+            &::-webkit-scrollbar {
+                width: 0;
+                height: 0;
+            }
+
+            &>div {
+                background-color: rgba(255, 255, 255, 0.9);
+                padding: 20px;
+                border-radius: $--border-radius-mini;
+                box-shadow: $--box-shadow-5;
+            }
+
+            &>.user-box {
+                text-align: center;
+
+                &>.avatar {
+                    width: 80px;
+                    height: 80px;
+                    border-radius: 100%;
+                    transition: 0.5s;
+                    border: white solid 2px;
+
+                    &:hover {
+                        transform: rotateZ(360deg);
+                    }
+                }
+
+                &>.message {
+                    display: block;
+                    margin-top: 10px;
+                    font-size: $--font-size-mini;
+                }
+            }
+
+            &>.views-box {
+                margin-top: 15px;
+                display: flex;
+                justify-content: space-around;
+            }
+
+            &>.labels-box {
+                margin-top: 15px;
+
+                &>.title {
+                    display: block;
+                    width: 100%;
+                    font-size: $--font-size-large;
+                    padding-bottom: 10px;
+                }
+
+                &>.labels {
+                    &>a {
+                        display: inline-block;
+                        background-color: $--color-primary-dark-9;
+                        color: $--color-primary-light-9;
+                        font-size: $--font-size-mini;
+                        border-radius: $--border-radius-small;
+                        padding: 5px 10px;
+                        text-decoration: none;
+                        margin: 5px;
+                    }
+                }
+            }
+
+            &>.news-box {
+                margin-top: 15px;
+
+                &>.title {
+                    display: block;
+                    font-size: $--font-size-large;
+                    padding-bottom: 5px;
+                }
+
+                &>.news {
+                    &>a {
+                        display: block;
+                        font-size: $--font-size-mini;
+                        color: $--color-primary-dark-9;
+                        border-radius: $--border-radius-mini;
+                        text-decoration: none;
+                        padding: 5px;
+
+                        &:hover {
+                            background-color: rgba(0, 0, 0, 0.1);
+                        }
+                    }
+                }
+            }
+        }
+
+        @media screen and (min-width: 900px) {
+            .lt-box {
+                width: calc(100% - 300px);
+            }
+        }
+
+        @media screen and (max-width: 900px) {
+            .lt-box {
+                width: calc(100% - 40px);
+            }
+
+            .rt-box {
+                display: none;
+            }
+        }
+    }
+
+    &>.operate-box {
+        padding: 20px 0;
+        text-align: center;
+
+        &>button {
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            border: none;
+            outline: none;
+            font-weight: bold;
+            font-size: 16px;
+            background-image: linear-gradient(to right, $--color-primary 10%, $--color-secondary 90%);
+            color: $--color-primary-light-9;
+            cursor: pointer;
+        }
+    }
+}

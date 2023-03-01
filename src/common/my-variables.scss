@@ -1,0 +1,117 @@
+/*颜色
+-------------------------- */
+$--color-white: #fff;
+$--color-black: #000;
+//主要颜色
+$--color-primary: #3b98fd;
+//次要颜色
+$--color-secondary: #32ded4;
+/*亮色*/
+$--color-primary-light-1: mix($--color-white, $--color-primary, 10%);
+$--color-primary-light-2: mix($--color-white, $--color-primary, 20%);
+$--color-primary-light-3: mix($--color-white, $--color-primary, 30%);
+$--color-primary-light-4: mix($--color-white, $--color-primary, 40%);
+$--color-primary-light-5: mix($--color-white, $--color-primary, 50%);
+$--color-primary-light-6: mix($--color-white, $--color-primary, 60%);
+$--color-primary-light-7: mix($--color-white, $--color-primary, 70%);
+$--color-primary-light-8: mix($--color-white, $--color-primary, 80%);
+$--color-primary-light-9: mix($--color-white, $--color-primary, 90%);
+$--color-secondary-light-1: mix($--color-white, $--color-secondary, 10%);
+$--color-secondary-light-2: mix($--color-white, $--color-secondary, 20%);
+$--color-secondary-light-3: mix($--color-white, $--color-secondary, 30%);
+$--color-secondary-light-4: mix($--color-white, $--color-secondary, 40%);
+$--color-secondary-light-5: mix($--color-white, $--color-secondary, 50%);
+$--color-secondary-light-6: mix($--color-white, $--color-secondary, 60%);
+$--color-secondary-light-7: mix($--color-white, $--color-secondary, 70%);
+$--color-secondary-light-8: mix($--color-white, $--color-secondary, 80%);
+$--color-secondary-light-9: mix($--color-white, $--color-secondary, 90%);
+/*暗色*/
+$--color-primary-dark-1: mix($--color-black, $--color-primary, 10%);
+$--color-primary-dark-2: mix($--color-black, $--color-primary, 20%);
+$--color-primary-dark-3: mix($--color-black, $--color-primary, 30%);
+$--color-primary-dark-4: mix($--color-black, $--color-primary, 40%);
+$--color-primary-dark-5: mix($--color-black, $--color-primary, 50%);
+$--color-primary-dark-6: mix($--color-black, $--color-primary, 60%);
+$--color-primary-dark-7: mix($--color-black, $--color-primary, 70%);
+$--color-primary-dark-8: mix($--color-black, $--color-primary, 80%);
+$--color-primary-dark-9: mix($--color-black, $--color-primary, 90%);
+$--color-secondary-dark-1: mix($--color-black, $--color-secondary, 10%);
+$--color-secondary-dark-2: mix($--color-black, $--color-secondary, 20%);
+$--color-secondary-dark-3: mix($--color-black, $--color-secondary, 30%);
+$--color-secondary-dark-4: mix($--color-black, $--color-secondary, 40%);
+$--color-secondary-dark-5: mix($--color-black, $--color-secondary, 50%);
+$--color-secondary-dark-6: mix($--color-black, $--color-secondary, 60%);
+$--color-secondary-dark-7: mix($--color-black, $--color-secondary, 70%);
+$--color-secondary-dark-8: mix($--color-black, $--color-secondary, 80%);
+$--color-secondary-dark-9: mix($--color-black, $--color-secondary, 90%);
+/*--------------------------------*/
+
+
+/*圆角
+--------------------------------*/
+$--border-radius-large: 20px;
+$--border-radius-base: 15px;
+$--border-radius-small: 10px;
+$--border-radius-mini: 5px;
+/*--------------------------------*/
+
+
+/*字体大小
+--------------------------------*/
+$--font-size-large: 20px;
+$--font-size-medium: 18px;
+$--font-size-base: 16px;
+$--font-size-small: 14px;
+$--font-size-mini: 12px;
+/*--------------------------------*/
+
+
+/*阴影
+--------------------------------*/
+$--box-shadow-1: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+$--box-shadow-2: rgba(100, 100, 111, 0.2);
+$--box-shadow-3: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+$--box-shadow-4: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+$--box-shadow-5: rgba(0, 0, 0, 0.16);
+$--box-shadow-6: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+$--box-shadow-7: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+$--box-shadow-8: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+$--box-shadow-9: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+/*--------------------------------*/
+
+/*层数
+--------------------------------*/
+$--z-index-1: 100;
+$--z-index-2: 200;
+$--z-index-3: 300;
+$--z-index-4: 400;
+$--z-index-5: 500;
+$--z-index-6: 600;
+$--z-index-7: 700;
+$--z-index-8: 800;
+$--z-index-9: 9999;
+/*--------------------------------*/
+
+/*滚动条
+--------------------------------*/
+@mixin scrollbar($width: 6px, $height:6px, $bgColor: $--color-primary-dark-9, $barColor: $--color-primary-dark-7, $borderRadius:$--border-radius-base) {
+    &::-webkit-scrollbar {
+        width: $width;
+        height: $height;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: $borderRadius;
+        background: $barColor;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $bgColor;
+    }
+}
+
+/*--------------------------------*/
